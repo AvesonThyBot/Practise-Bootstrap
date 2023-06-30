@@ -7,10 +7,8 @@ function darkmodeFunction() {
     const footer = document.querySelector('footer');
     const socialLinks = document.querySelectorAll('.fa-brands');
     const usefulLinks = document.querySelectorAll('.useful-links a');
-
     const icons = ["moon.png", "sun.png"];
     let currentIconIndex = 0;
-
     toggleButton.addEventListener('click', function() {
         const icon = toggleButton.querySelector('img');
         currentIconIndex = (currentIconIndex + 1) % icons.length;
@@ -61,7 +59,7 @@ function darkmodeFunction() {
         }
     });
 }
-
 document.addEventListener('DOMContentLoaded', function() {
     darkmodeFunction();
 });
+
