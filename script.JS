@@ -7,13 +7,15 @@ function darkmodeFunction() {
     const footer = document.querySelector('footer');
     const socialLinks = document.querySelectorAll('.fa-brands');
     const usefulLinks = document.querySelectorAll('.useful-links a');
+    const connectedText = document.querySelector('.me-5 span'); // Get the connected text element
     const icons = ["moon.png", "sun.png"];
     let currentIconIndex = 0;
+    
     toggleButton.addEventListener('click', function() {
         const icon = toggleButton.querySelector('img');
         currentIconIndex = (currentIconIndex + 1) % icons.length;
         icon.src = "img/" + icons[currentIconIndex];
-
+    
         if (html.dataset.bsTheme === "dark") { // light theme modifications
             html.dataset.bsTheme = "light";
             navbar.classList.remove('navbar-dark', 'bg-dark');
@@ -31,10 +33,9 @@ function darkmodeFunction() {
             usefulLinks.forEach(link => {
                 link.classList.remove('text-white');
                 link.classList.add('text-dark');
-            });
-            const connectedText = document.querySelector('.me-5 span');
-            connectedText.classList.remove('text-white');
-            connectedText.classList.add('text-dark');
+            }); 
+            connectedText.classList.remove('text-white'); // Remove the white text color
+            connectedText.classList.add('text-dark'); // Add the dark text color
         } else { // dark theme modifications
             html.dataset.bsTheme = "dark";
             navbar.classList.remove('navbar-light', 'bg-light');
@@ -53,13 +54,12 @@ function darkmodeFunction() {
                 link.classList.remove('text-dark');
                 link.classList.add('text-white');
             });
-            const connectedText = document.querySelector('.me-5 span');
-            connectedText.classList.remove('text-dark');
-            connectedText.classList.add('text-white');
+            connectedText.classList.remove('text-dark'); // Remove the dark text color
+            connectedText.classList.add('text-white'); // Add the white text color
         }
     });
 }
+
 document.addEventListener('DOMContentLoaded', function() {
     darkmodeFunction();
 });
-
