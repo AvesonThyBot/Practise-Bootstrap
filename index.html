@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <!-- Start of Head -->
 <head>
@@ -22,7 +22,7 @@
 
     
 
-    <!-- Extra CSS styling -->
+    <!-- Extra CSS styling & JS-->
     <style>
         footer {
             position: absolute;
@@ -34,11 +34,12 @@
         color: #000000;
         }
     </style>
+    <script src="script.JS"></script>
 </head>
 <!-- End of Head -->
 
 <!-- Start of Body -->
-<body data-bs-theme="dark">
+<body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" style="width:5%" href="/">
@@ -57,7 +58,7 @@
             </ul>
             <div class="d-flex align-items-center">
                 <span id="dark-mode-btn">
-                    <img style="width: 40px;" src="img/moon.png" alt="moon icon" class="img-fluid">
+                    <img style="width: 40px;" src="img/moon.png" alt="moon icon" class="img-fluid" onclick="darkmodeFunction">
                 </span>
             </div>
         </div>
@@ -66,67 +67,7 @@
     <!-- Main content -->
     <div class="container my-5">
         <h1>Welcome to test website.</h1>
-    </div>
-
-    <!-- Dark mode toggle script -->
-<!-- Dark mode toggle script -->
-<script>
-    const toggleButton = document.querySelector('#dark-mode-btn');
-    const html = document.querySelector('html');
-    const navbar = document.querySelector('.navbar');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const footer = document.querySelector('footer');
-    const socialLinks = document.querySelectorAll('.fa-brands');
-    const usefulLinks = document.querySelectorAll('.useful-links a');
-  
-    const icons = ["moon.png", "sun.png"];
-    let currentIconIndex = 0;
-  
-    toggleButton.addEventListener('click', function() {
-      const icon = toggleButton.querySelector('img');
-      currentIconIndex = (currentIconIndex + 1) % icons.length;
-      icon.src = "img/" + icons[currentIconIndex];
-  
-      if (html.dataset.bsTheme === "dark") {
-        html.dataset.bsTheme = "light";
-        navbar.classList.remove('navbar-dark', 'bg-dark');
-        navbar.classList.add('navbar-light', 'bg-light');
-        navLinks.forEach(link => {
-          link.classList.remove('text-white');
-          link.classList.add('text-dark');
-        });
-        footer.classList.remove('bg-dark', 'text-white');
-        footer.classList.add('bg-light', 'text-dark');
-        socialLinks.forEach(link => {
-          link.classList.remove('text-white');
-          link.classList.add('text-dark');
-        });
-        usefulLinks.forEach(link => {
-          link.classList.remove('text-white');
-          link.classList.add('text-dark');
-        });
-      } else {
-        html.dataset.bsTheme = "dark";
-        navbar.classList.remove('navbar-light', 'bg-light');
-        navbar.classList.add('navbar-dark', 'bg-dark');
-        navLinks.forEach(link => {
-          link.classList.remove('text-dark');
-          link.classList.add('text-white');
-        });
-        footer.classList.remove('bg-light', 'text-dark');
-        footer.classList.add('bg-dark', 'text-white');
-        socialLinks.forEach(link => {
-          link.classList.remove('text-dark');
-          link.classList.add('text-white');
-        });
-        usefulLinks.forEach(link => {
-          link.classList.remove('text-dark');
-          link.classList.add('text-white');
-        });
-      }
-    });
-  </script>
-  
+    </div>  
 
 </body>
 <!-- End of Body -->
@@ -177,7 +118,7 @@
       <h6 class="text-uppercase fw-bold">Bootstrap</h6>
       <hr
           class="mb-4 mt-0 d-inline-block mx-auto"
-          style="width: 60px; background-color: #7c4dff; height: 2px"
+          style="width: 60px; background-color: #6351ce; height: 4px"
           />
       <p>
             Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains HTML, CSS and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.
@@ -190,7 +131,7 @@
     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
         <!-- Links -->
         <h6 class="text-uppercase fw-bold">Useful links</h6>
-        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #6351ce; height: 4px" />
         <p class="useful-links">
           <a href="#!" class="text-white">Your Account</a>
         </p>
@@ -212,7 +153,7 @@
       <h6 class="text-uppercase fw-bold">Contact</h6>
       <hr
           class="mb-4 mt-0 d-inline-block mx-auto"
-          style="width: 60px; background-color: #7c4dff; height: 2px"
+          style="width: 60px; background-color: #6351ce; height: 4px"
           />
       <p><i class="fas fa-home mr-3"></i> City, Street, Number</p>
       <p><i class="fas fa-envelope mr-3"></i> example@email.com </p>
